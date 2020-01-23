@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD LOCALSOTRAGE</title>
+
+    <style>
+        .rojo{
+            background:red;
+        }
+        .verde{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+
+      <div>
+         <h1>Primer crud</h1>
+         <input type="text" v-model="texto" @keyup.enter="AgregarFila">
+
+         <button @click="AgregarFila"> diste click</button>
+
+         <span>{{texto}}</span>
+
+         
+        <table>
+            <thead>
+                    <tr>
+                        <th>item</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+            </thead>
+            <tbody v-for="(array,index) of filas" >
+                    <tr :class="[array.estado===0 ? 'rojo' : 'verde']">
+                        <td>{{index+1}}</td>
+                        <td>{{array.nombre}}</td>
+                        <td>{{array.estado}}</td>
+                        <td><button @click="Editar(index)" >EDITAR</button><button @click="Eliminar(index)">Eliminar</button></td>
+                    </tr>
+                   
+            </tbody>
+
+        </table>
+
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/3.js"></script>
+
+    
+</body>
+</html>
