@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+  {{ titulo }}
+
+  <ul>
+    <li v-for="nombre of nombres">{{nombre}}</li>
+  </ul>
+
+  <ul>
+    <li v-for="frut of frutas">{{frut}}</li>
+  </ul>
+
+  <ul>
+    <li v-for="frut of frutas">
+      <button @click="frut.Cantidad=frut.Cantidad+1"> AGREGAR 1+</button>
+      <input type="text" v-model.number="frut.Cantidad">
+      {{frut.nombre}}
+      - <span v-if="frut.Cantidad===0">No hay Stock</span>
+    </li>
+  </ul>
+
+
+  <input type="text" v-model="datoinput1"  @keyup.enter="agregarFunction2">
+
+  <button @click="agregarFunction1"> CLICK1</button>
+  
+
+  <h1>{{total}}</h1>
+  <h1>{{SumarTodo}}</h1>
+</div>
+
+	<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/inicio.js"></script>
+
+<script>
+	
+/*
+	var app2 = new Vue({
+  el: '#app2',
+  data: {
+    message: 'Hello Vue!s s'
+  }
+})
+*/
+</script>
+</body>
+</html>
